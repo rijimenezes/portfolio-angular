@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center align-items-center p-3" style="min-height: 100vh; min-width: 100vw;">
+
+    <form [formGroup]="form" class="text-center p-4 rounded bg-white" style="border: 2px solid rgb(37, 115, 167);">
+        <div class="form-group text-center row align-items-center m-0 mt-2">
+            <label for="user" class="col-sm-12 col-md-4 text-left">Usuario</label>
+            <input id="user" [class.is-invalid]="form && form.get('name')?.invalid && (form.get('name')?.touched || form.get('name')?.dirty)" class="col-sm-12 col-md-8 form-control" placeholder="user@mail.com" formControlName="name" type="text">          
+          <ng-container *ngIf="form && form.get('name')?.invalid && (form.get('name')?.touched || form.get('name')?.dirty)">
+            <div class="col-sm-12 col-md-4"></div>
+            <p class="col-sm-12 col-md-8 help-error-block text-left" *ngIf="form.get('name')?.hasError('required')">Campo requerido</p>             
+            <p class="col-sm-12 col-md-8 help-error-block text-left" *ngIf="form.get('name')?.hasError('pattern')">Ingrese un correo electrónico valido</p>             
+          </ng-container>
+        </div>         
+    
+        <div class="form-group text-center row align-items-center m-0 mt-2">
+            <label for="password" class="col-sm-12 col-md-4 text-left">Contraseña</label>
+            <input id="password" [class.is-invalid]="form && form.get('password')?.invalid && (form.get('password')?.touched || form.get('password')?.dirty)" class="col-sm-12 col-md-8 form-control" placeholder="********" formControlName="password" type="password" (keyup.enter)="logIn()">
+    
+          <ng-container *ngIf="form && form.get('password')?.invalid && (form.get('password')?.touched || form.get('password')?.dirty)">
+            <div class="col-sm-12 col-md-4"></div>
+            <p class="col-sm-12 col-md-8 help-error-block text-left">Campo requerido</p>
+          </ng-container>
+        </div>
+        <div class="row m-0 mt-2">
+            <div class="col-sm-12 col-md-4"></div>
+            <div class="col-sm-12 col-md-6 text-center">
+                <button class="btn btn-primary" (click)="logIn()" [disabled]="form && form.invalid">
+                  Entrar
+                </button>          
+            </div>
+        </div>               
+      
+    </form>
+</div>

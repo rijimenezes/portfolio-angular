@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio-v1';
+  
+  sessionActive = false;
+
+  constructor(
+    private userService: UserService
+  ){
+
+    this._init();
+  }
+
+  private _init(){
+    this.userService.isLogged().subscribe( logged => this.sessionActive = logged);
+  }
+
+  logIn(user: string){
+    this.userService.logIn(user);
+  }
+
+  logOut(){
+    this.userService.logOut();
+  }
 }

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,500;0,700;1,300&display=swap');
+
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+body{
+    background-color: #f6f6f6 !important;
+
+}
+
+.help-error-block{
+    color: rgb(200, 27, 27);
+    font-size: 12px;
+}
+
+.text-underline:hover{
+    text-decoration: underline !important;
+}
+
+// ngb bootstrap
+.modal.fade.show{
+    transition: background-color 150ms ease-in-out !important;
+    background-color: rgba(0,0,0,0.3);    
+}

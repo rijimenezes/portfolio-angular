@@ -1,0 +1,16 @@
+
+<div class="d-flex align-items-center justify-content-between p-3 my-nav">
+    <div class="avatar">
+        
+        <a [routerLink]="[ '/' ]" class="btn"><i class="fas fa-home mr-1"></i>Inicio</a>
+    </div>
+    <ul class="menu-container">
+        <li>
+            <a routerLink="management">Admon</a>
+        </li>
+        <li>
+            <a routerLink="portfolio" >Portafolio</a>
+        </li>
+    </ul>
+    <button (click)="logOut()" class="btn btn-danger"><i class="fas fa-sign-out-alt mr-1"></i>Salir</button>
+</div>

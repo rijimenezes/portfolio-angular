@@ -1,0 +1,52 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">
+    {{ action == "create" ? "Registrar nuevo proyecto" : "Editar proyecto" }}
+  </h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="form-group row">
+      <label class="col-4 text-right" for="name">Nombre</label>
+      <div class="col-8 input-group">
+        <input
+          id="name"
+          name="name"
+          class="form-control"
+          ngbAutofocus
+          [(ngModel)]="project"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-4 text-right" for="description">Descripción</label>
+      <div class="col-8 input-group">
+        <input id="description" name="description" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-4 text-right" for="techs">Tecnologías</label>
+      <div class="col-8 input-group">
+        <input id="techs" name="techs" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-4 text-right" for="images">Imagenes</label>
+      <div class="col-8 input-group">
+        <input id="images" name="images" class="form-control" />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-4 text-right" for="link">Enlace</label>
+      <div class="col-8 input-group">
+        <input id="link" name="link" class="form-control" />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <a class="btn text-danger text-decoration-none text-underline" (click)="close()">Cancelar</a>
+  <a class="border-left btn text-success text-decoration-none text-underline" (click)="close()">Aceptar</a>
+</div>
